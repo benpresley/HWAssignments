@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+Auben (Ben) Presley
+-->
+<html>
+<head>
+<title>My Awesome Factorial Calculator</title>
+<p> ~My Awesome Factorial Calculator~</p>
+<script>
+	function findFactorial(){//function that calculates the factorial and displays the answer on a new line everytime the loop goes through.
+        document.getElementById("result").innerHTML = "";
+		var num = document.getElementById("number").value;
+		var fact = 1;
+
+		//loop till the iterator i equals to number
+		for (i = 1; i <= num; i++){
+
+			fact = fact * i;//formula to produce the factorial
+            document.getElementById("result").insertAdjacentHTML('beforeend', '<br>');
+			document.getElementById("result").insertAdjacentHTML('beforeend', fact);
+      //displays the result of the factorial and puts a break in for each new line.
+		}
+	}
+</script>
+</head>
+<body>
+
+ Enter Number: <input type="number" id="number" min="1" max="50" /><button onclick="findFactorial()">Calculate</button>
+	<!--line 24 creates the input box and commands the function to run once button is pressed.
+   Notice the MIN & Max features. This is a safe gaurd to keep from producing a null/NaN and to keep the user from inputting a Number
+   so larfe that the program cannot handle the input number.-->
+	<div id="result"></div>
+</body>
+</html>
